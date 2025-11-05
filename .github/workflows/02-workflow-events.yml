@@ -21,7 +21,6 @@ jobs:
       - name: Hello World
         run: echo "Echo 1"
 
-
   echo2:
     runs-on: ubuntu-latest
     steps:
