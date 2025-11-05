@@ -1,0 +1,24 @@
+name: 04-actions-workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  node-20-release:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: .
+    steps:
+      - name: Checkout repository code
+        uses: actions/checkout@v4
+      - name: Printing dirs
+        run: ls -la
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20.x"
+      - name: Print Node version
+        run: |
+          npm --version
+          node --version

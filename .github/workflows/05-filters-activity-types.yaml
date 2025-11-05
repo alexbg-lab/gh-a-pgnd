@@ -1,0 +1,21 @@
+name: 05-filters-activity-types
+
+on:
+
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches:
+      - main
+      - 'release/**'
+
+jobs:
+  checkout-code:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: .
+    steps:
+      - name: Checkout repository code
+        uses: actions/checkout@v4
+      - name: Printing dirs
+        run: ls -la
