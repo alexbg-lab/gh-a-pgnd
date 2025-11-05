@@ -1,0 +1,21 @@
+name: filters-activity-types
+
+on:
+
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches:
+      - main
+      - 'release/**'
+
+jobs:
+  node-20-release:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: .
+    steps:
+      - name: Checkout repository code
+        uses: actions/checkout@v4
+      - name: Printing dirs
+        run: ls -la
