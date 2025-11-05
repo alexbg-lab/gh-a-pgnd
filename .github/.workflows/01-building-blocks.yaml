@@ -1,9 +1,0 @@
-name: 01-Building Blox
-
-on: push:
-
-jobs:
-    build:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Hello World
