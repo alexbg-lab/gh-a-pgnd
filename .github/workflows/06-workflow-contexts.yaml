@@ -11,10 +11,7 @@ on:
         default: false
 
 env:
-  MY_VAR2:
-    description: "Some variable"
-    required: true
-    default: "workflow level variable value"
+  MY_VAR2: "workflow level variable value"
 
 jobs:
   echo1:
