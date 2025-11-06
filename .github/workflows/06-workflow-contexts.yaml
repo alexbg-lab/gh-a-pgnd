@@ -17,7 +17,6 @@ on:
         - warning
         - debug
 
-
 jobs:
   echo1:
     runs-on: ubuntu-latest
