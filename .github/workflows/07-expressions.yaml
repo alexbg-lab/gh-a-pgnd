@@ -1,6 +1,9 @@
 name: 07 - Using Expressions
 run-name: "07 - Using Expressions | DEBUG - ${{ inputs.debug && 'ON' || 'OFF' }}"
 
+env: 
+  MY_VAR: ${{ vars.MY_VAR || 'default_value' }}
+
 on:
   push:
     branches:
