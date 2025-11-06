@@ -40,5 +40,5 @@ jobs:
     steps:
       - name: Retrieve Variable Values2
         run: |
-          echo "Github Variables:MY_VAR: $MY_VAR"
+          echo "Github Actions Repository Variable: MY_VAR: $MY_VAR"
           echo "MY_VAR2: $MY_VAR2"
