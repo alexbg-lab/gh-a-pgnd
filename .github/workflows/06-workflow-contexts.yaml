@@ -36,4 +36,4 @@ jobs:
       - name: Retrieve Variable
         run: |
           echo "MY_VAR: ${{ vars.MY_VAR }}"
-          echo "MY_VAR: ${{ env.MY_VAR2 }}"
+          echo "MY_VAR2: ${{ env.MY_VAR2 }}"
