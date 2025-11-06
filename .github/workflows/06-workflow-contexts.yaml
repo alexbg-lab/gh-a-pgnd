@@ -1,9 +1,9 @@
 name: 06-workflow-contexts
 run-name: 06-workflow-contexts | DEBUG - ${{ inputs.debug }}
 on:
-  push:
-    branches:
-      - main
+  # push:
+  #   branches:
+  #     - main
   workflow_dispatch:
     inputs:
       debug:
