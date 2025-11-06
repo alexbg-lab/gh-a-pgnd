@@ -5,9 +5,9 @@ env:
   MY_VAR: ${{ vars.MY_VAR || 'default_value' }}
 
 on:
-  push:
-    branches:
-      - main
+  # push:
+  #   branches:
+  #     - main
   workflow_dispatch:
     inputs:
       debug:
