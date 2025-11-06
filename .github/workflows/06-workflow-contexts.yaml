@@ -9,14 +9,18 @@ on:
       debug:
         type: boolean
         default: false
-      MY_VAR2:
-        description: "Some variable"
-        required: true
-        default: "hello world"
+
+env:
+    MY_VAR2:
+      description: "Some variable"
+      required: true
+      default: "workflow level variable value"
 
 jobs:
   echo1:
     runs-on: ubuntu-latest
+    env:
+      MY_VAR2: "job-overriden variable value"
     steps:
       - name: Display Info
         run: |
