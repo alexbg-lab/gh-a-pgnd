@@ -1,8 +1,5 @@
 name: 10 - Execution flow
 on:
-  pull_request:
-    branches:
-      - main
   workflow_dispatch:
     inputs: 
       pass-unit-tests:
