@@ -43,7 +43,7 @@ jobs:
         #   STEP_VAR: 'I am a step env var'
         #   step_var2: 'I am another step var'
         run: |
-          set -exo
+          set -xo
           echo "ORG var: ${{ vars.ORG_VARIABLE }}"
           echo "ORG overwritten var: ${{ vars.OVERWRITTEN_VAR }}"
           echo "Repo var: ${{ vars.REPOSITORY_VAR }}"
@@ -53,7 +53,7 @@ jobs:
     steps:
       - name: "Print PROD Variables"
         run: |
-          set -exo
+          set -xo
           echo "ORG var: ${{ vars.ORG_VARIABLE }}"
           echo "ORG overwritten var: ${{ vars.OVERWRITTEN_VAR }}"
           echo "Repo var: ${{ vars.REPOSITORY_VAR }}"
@@ -63,5 +63,5 @@ jobs:
     steps:
       - name: "Print Undefined Variables"
         run: |
-          set -exo
+          set -xo
           echo "ORG var: ${{ env.UNDEFINED_VAR_WITH_DEFAULT }}"
