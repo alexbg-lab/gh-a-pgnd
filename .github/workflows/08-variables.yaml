@@ -23,10 +23,10 @@ jobs:
           step_var2: 'I am another step var'
         run: |
           set -exo
-          echo "Step env var: $STEP_VAR"
+          echo "Step env var: $STEP_VAR or ${{ env.STEP_VAR }}"
           echo "Step env var 2: $step_var2"
-          echo "Job env var: $JOB_VAR"
-          echo "Workflow env var: $WORKFLOW_VAR"
+          echo "Job env var: $JOB_VAR or ${{ env.JOB_VAR }}"
+          echo "Workflow env var: $WORKFLOW_VAR or ${{ env.WORKFLOW_VAR }}"
           echo "Overwritten: $OVERWRITTEN"
       - name: "Overwrite Job Variable"
         env:
