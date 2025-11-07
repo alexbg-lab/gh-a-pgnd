@@ -1,0 +1,8 @@
+name: 09 - Organization
+on:
+  push:
+    branches:
+      - main
+env:
+  ORG_VAR: 'organization value'
+  OVERWRITTEN_VAR: organization value 2
