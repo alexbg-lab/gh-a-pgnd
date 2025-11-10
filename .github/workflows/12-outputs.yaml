@@ -30,8 +30,8 @@ jobs:
         run: echo "${{ steps.build.outputs.status }}"
   deploy:
     runs-on: ubuntu-latest
-    needs: build
     name: Print build status
+    needs: build
     if: "${{ needs.build.outputs.status == 'success' }}"
     steps:
       - name: Deploy
