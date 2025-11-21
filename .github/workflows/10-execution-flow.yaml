@@ -5,7 +5,7 @@ on:
       pass-unit-tests:
         description: "Pass unit tests"
         type: boolean
-        default: "false"
+        default: false
 
 
 jobs:
