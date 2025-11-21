@@ -12,6 +12,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      working-directory: ./13-caching
     steps:
       - name: Checkout
         uses: actions/checkout@v4
