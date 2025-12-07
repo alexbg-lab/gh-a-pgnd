@@ -11,6 +11,12 @@ jobs:
       matrix:
         node-version: [ 18.x, 21.x ]
         os: [ ubuntu-latest, windows-latest ]
+        include: # allows adding specific combinations to the matrix
+          - node-version: 18.x
+            os: windows-latest
+          - node-version: 21.x # add tags to a specific combo
+            os: ubuntu-latest
+            tag: experimental
     steps:
       - name: Hello World
         uses: actions/setup-node@v3
@@ -18,4 +24,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Perform tests
         run: echo "Hello World"
+      - name: Fail if experimental
+        if: ${{ matrix.tag == 'experimental' }}
+        run: exit 1
   
