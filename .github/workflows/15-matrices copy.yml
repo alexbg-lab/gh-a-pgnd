@@ -41,8 +41,7 @@ jobs:
         include:
           - color: yellow
             shape: triangle
-            size: medium
-            os: windows-latest
+          - opacity: 50
     steps:
       - name: Hello World
         run: echo "${{matrix.color}} - ${{matrix.shape}} - ${{matrix.size}}"
