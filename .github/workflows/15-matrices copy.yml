@@ -28,3 +28,17 @@ jobs:
         run: exit 1
       - name: Perform tests
         run: echo "Hello World"
+
+  include-experiment:
+    name: ${{matrix.color}} - ${{matrix.shape}} - ${{matrix.size}}
+    runs-on: ${{matrix.os}}
+    strategy:
+      fail-fast: false
+      matrix:
+        color: [red, green]
+        shape: [circle, square]
+        size: [small, large]
+        include:
+          - color: yellow
+            shape: triangle
+            size: medium
