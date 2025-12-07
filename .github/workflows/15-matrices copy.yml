@@ -31,7 +31,7 @@ jobs:
 
   include-experiment:
     name: ${{matrix.color}} - ${{matrix.shape}} - ${{matrix.size}}
-    runs-on: alpine-slim
+    runs-on: ubuntu-latest
     strategy:
       # fail-fast: false
       matrix:
