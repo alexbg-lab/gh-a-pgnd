@@ -7,6 +7,7 @@ jobs:
   backwards-compat:
     name: ${{matrix.os}} - Node ${{matrix.node-version}}
     runs-on: ${{matrix.os}}
+    fail-fast: false
     strategy:
       matrix:
         node-version: [ 18.x, 21.x ]
