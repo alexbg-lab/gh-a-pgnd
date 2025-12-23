@@ -12,8 +12,7 @@ inputs:
     required: false
   target-env:
     description: "Target environment"
-    default: dev
-    required: false
+    required: true
 
 runs:
   using: composite
