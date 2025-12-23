@@ -10,6 +10,10 @@ inputs:
     description: the working dir of the application
     default: 17-custom-actions/react-app
     required: false
+  target-env:
+    description: "Target environment"
+    default: dev
+    required: false
 
 runs:
   using: composite
@@ -24,8 +28,8 @@ runs:
       with:
         path: ${{ inputs.working-dir }}/node_modules
         key: node-modules-${{ hashFiles('${{ inputs.working-dir }}/package-lock.json') }}
-    - name: Install dependencies
+    - name: Install dependencies for ${{ inputs.target-env }}
       if: steps.cache.outputs.cache-hit != 'true'
-      run: npm ci
+      run: ${{ inputs.target-env == 'dev' && 'npm ci' || 'npm ci --omit=dev' }}
       shell: bash
       working-directory: ${{ inputs.working-dir }}
