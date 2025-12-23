@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
     inputs:
       target-env:
-        description: "Target environment"
+        description: "Target environment for dep installation"
         type: choice
         options:
           - dev
