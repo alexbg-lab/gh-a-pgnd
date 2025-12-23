@@ -11,12 +11,12 @@ jobs:
       - name: Setup Node & NPM deps
         uses: ./.github/actions/composite-cache-dep
         with:
-          working-dir: ./17-custom-actions/react-app
+          working-dir: 17-custom-actions/react-app
           node-version: 24.x
       - name: Test
         run: npm ci
-        working-directory: ./17-custom-actions/react-app
+        working-directory: 17-custom-actions/react-app
       - name: Build
         run: npm run build
-        working-directory: ./17-custom-actions/react-app
+        working-directory: 17-custom-actions/react-app
       
