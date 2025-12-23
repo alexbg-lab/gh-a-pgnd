@@ -2,6 +2,11 @@ name: 17-custom-actions-composite
 
 on:
   workflow_dispatch:
+    inputs:
+      target-env:
+        description: "Target environment"
+        default: dev
+        required: false
 
 jobs:
   build:
