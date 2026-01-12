@@ -1,0 +1,19 @@
+name: Ping URL
+description: Used to Ping URL of an app
+
+input:
+  url:
+    description: URL to ping
+    required: true
+  max_trials:
+    description: Maximum number of pings
+    required: true
+    default: 3
+  delay:
+    description: Delay between pings
+    required: false
+    default: 5
+
+runs:
+  using: docker
+  image: Dockerfile

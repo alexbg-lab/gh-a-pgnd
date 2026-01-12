@@ -1,0 +1,20 @@
+name: Update NPM Deps
+description: Checks for updates to NPM pkgs & creates PR w/ the updated package*.json
+
+inputs:
+  node-version:
+    description: NodeJS version to use
+    default: 24.x
+    required: false
+  # working-dir:
+  #   description: the working dir of the application
+  #   default: 17-custom-actions/react-app
+  #   required: false
+  # target-env:
+  #   description: "Target environment"
+  #   default: "dev"
+  #   required: true
+
+runs:
+  using: ${{ inputs.node-version }}
+  main: index.js
