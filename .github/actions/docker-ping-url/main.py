@@ -3,4 +3,4 @@ if __name__ == "__main__":
 
     url: str | None = os.getenv("INPUT_URL")
 
-    print(requests.get(url).status_code)
+    print("Status Code:", requests.get(url).status_code)
