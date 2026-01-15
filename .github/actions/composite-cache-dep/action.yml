@@ -22,6 +22,9 @@ outputs:
   random-output:
     description: Random value output
     value: ${{ steps.random-output.outputs.random }}
+  deps-installed:
+    description: deps installed output
+    value: ${{ steps.cache-output.outputs.installed-deps }}
 
 runs:
   using: composite
@@ -43,10 +46,12 @@ runs:
       run: ${{ inputs.target-env == 'dev' && 'npm ci' || 'npm ci --omit=dev' }}
       shell: bash
       working-directory: ${{ inputs.working-dir }}
+    - name: Print DEPS output
+      shell: bash
+      id: cache-output
+      run: echo ${{ steps.cache.outputs.installed-deps }}
     - name: Random Output
       shell: bash
       id: random-output
       run: echo "radom=123" >> $GITHUB_OUTPUT
-    - name: Print DEPS output
-      shell: bash
-      run: echo ${{ steps.cache.outputs.installed-deps }}
+
