@@ -6,7 +6,7 @@ def set_output(file_path, key, value):
         print(f"{key}={value}", file=f)
 
 
-def run():
+def main():
     website_url: str | None = os.getenv("INPUT_URL")
     website_reachable = requests.get(website_url).status_code
     print("Website Status Code:", website_reachable)
@@ -17,4 +17,4 @@ def run():
 
 
 if __name__ == "__main__":
-    run()
+    main()
