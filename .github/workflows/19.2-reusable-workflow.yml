@@ -5,7 +5,7 @@ on:
 
 jobs:
   deploy-app:
-    uses: ./.github/workflows/19.1-reusable-workflow
+    uses: ./.github/workflows/19.1-reusable-workflow.yml
     with:
       target-dir: dummy-dir
   deploy-outputs:
