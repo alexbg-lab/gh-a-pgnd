@@ -3,12 +3,6 @@ name: 20.2 - Manage Concurrency
 on:
   workflow_dispatch:
 
-concurrency: 
-# best to bound single concurrency group to a single workflow
-# multiple workflows with the same concurrency group could lead to weird behavior
-  group: ${{ github.workflow }}-${{ github.ref }}
-  # cancel-in-progress: false
-
 jobs:
   ping-w-concurrency:
     runs-on: ubuntu-latest
